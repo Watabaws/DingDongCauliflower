@@ -1,7 +1,7 @@
-#Jawadul Kadir
+#Jawadul Kadir and Adam Abbas
 #SoftDev1 pd7
-#HW9 -- No Treble
-#2017-10-14
+#HW10 -- Average
+#2017-10-17
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitates CSV I/O

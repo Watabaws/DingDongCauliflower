@@ -1,3 +1,8 @@
+#Jawadul Kadir and Adam Abbas
+#SoftDev1 pd7
+#HW10 -- Average
+#2017-10-17
+
 import sqlite3 #To write to the database
 
 pc="peeps_n_courses.db" #This is gonna be our file
@@ -39,6 +44,18 @@ def insert_stud_record():
 		e.execute(command)
 
 insert_stud_record()
+
+def print_averages():
+	for di in get_ids():
+		name = e.execute("SELECT name FROM peeps WHERE id =" + str(di[0]) + ";")
+		print "name: " + str(name.fetchall()[0][0]) + " | id: " + str(di[0]) + " | avg: " + str(compute_average(di[0]))
+
+print_averages()
+
+#TODO
+# Facilitate updating a student's average
+# Facilitate adding rows to the courses table
+# To test the last 2 features, you should add lines to the end of courses.csv to reflect a new term's worth of course enrollment for your peeps (students).
 
 db.commit() #Commit our changes! It's official!!!
 db.close() #Close the file connection
