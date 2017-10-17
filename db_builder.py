@@ -30,7 +30,7 @@ peeps_file.close()
 #courses
 courses_file = open('courses.csv', 'rU')
 courses = csv.DictReader(courses_file)
-command = "CREATE TABLE courses(id INTEGER, name TEXT, mark INTEGER)"
+command = "CREATE TABLE courses(id INTEGER, code TEXT, mark INTEGER)"
 c.execute(command) #makes courses table
 for row in courses:
 	ID = row['id']
