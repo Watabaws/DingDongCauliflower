@@ -1,4 +1,3 @@
-import csv #Gonna need that DictReader
 import sqlite3 #To write to the database
 
 pc="peeps_n_courses.db" #This is gonna be our file
@@ -11,9 +10,10 @@ init_table = "CREATE TABLE grades_n_average (name TEXT, id NUMERIC PRIMARY KEY, 
 d.execute(init_table)
 
 iterThrough = d.execute("SELECT id FROM peeps;")
-
+print iterThrough
 for di in iterThrough:
-	command = "SELECT mark FROM courses WITH id=" + str(di[0]) + ";"
+	#print "di:" + str(di)
+	command = "SELECT mark FROM courses WHERE id = " + str(di[0]) + ";"
 	print d.execute(command)
     #command = "INSERT INTO grades_n_average VALUES (" + d.execute("SELECT name FROM peeps WITH id =" + di + ";") + ", " + di +
 
