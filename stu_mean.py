@@ -57,5 +57,10 @@ print_averages()
 # Facilitate adding rows to the courses table
 # To test the last 2 features, you should add lines to the end of courses.csv to reflect a new term's worth of course enrollment for your peeps (students).
 
+def update_average(di):
+	name = e.execute("SELECT name FROM peeps WHERE id =" + str(di[0]) + ";")
+	command = "UPDATE peeps_avg SET avg = " + str(compute_average(di[0])) + " WHERE id = " + str(di[0]) + ";"
+	e.execute(command)
+
 db.commit() #Commit our changes! It's official!!!
 db.close() #Close the file connection
