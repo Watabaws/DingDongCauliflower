@@ -35,7 +35,7 @@ def insert_stud_record():
 	for di in get_ids():
 		name = e.execute("SELECT name FROM peeps WHERE id =" + str(di[0]) + ";")
 		command = "INSERT INTO grades_n_average VALUES ('" + str(name.fetchall()[0][0]) + "', " + str(di[0]) + ", " + str(compute_average(di[0])) + ");"
-		e.execute(command)
+		d.execute(command);
 
 insert_stud_record()
 
